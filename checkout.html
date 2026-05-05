@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Vibe-well</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">Vibe-well</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="policy.html">Policies</a></li>
+                <li><a href="cart.html" class="cart-link">Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <h1>Checkout</h1>
+            
+            <div class="checkout-content">
+                <div class="checkout-form">
+                    <form id="checkout-form">
+                        <!-- Shipping Information -->
+                        <fieldset>
+                            <legend>Shipping Information</legend>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name *</label>
+                                    <input type="text" id="first-name" name="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name *</label>
+                                    <input type="text" id="last-name" name="last-name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Street Address *</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State/Province *</label>
+                                    <input type="text" id="state" name="state" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">ZIP/Postal Code *</label>
+                                    <input type="text" id="zip" name="zip" required>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Shipping Method -->
+                        <fieldset>
+                            <legend>Shipping Method</legend>
+                            <label>
+                                <input type="radio" name="shipping" value="standard" checked>
+                                Standard Shipping (5-7 days) - $5.99
+                            </label>
+                            <label>
+                                <input type="radio" name="shipping" value="express">
+                                Express Shipping (2-3 days) - $12.99
+                            </label>
+                            <label>
+                                <input type="radio" name="shipping" value="overnight">
+                                Overnight Shipping - $24.99
+                            </label>
+                        </fieldset>
+
+                        <!-- Payment Information -->
+                        <fieldset>
+                            <legend>Payment Information</legend>
+                            <div id="card-element"></div>
+                            <div id="card-errors" style="color: #ef4444; margin-top: 0.5rem;"></div>
+                        </fieldset>
+
+                        <!-- Terms -->
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="agree-terms" required>
+                                I agree to the <a href="policy.html" target="_blank">terms and conditions</a> and <a href="policy.html" target="_blank">privacy policy</a> *
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Complete Purchase</button>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="checkout-summary">
+                    <h2>Order Summary</h2>
+                    <div id="order-items" style="margin-bottom: 1rem;">
+                        <!-- Order items will be displayed here -->
+                    </div>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="checkout-subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span id="checkout-shipping">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (8%):</span>
+                        <span id="checkout-tax">$0.00</span>
+                    </div>
+                    <div class="summary-row" id="checkout-discount-row" style="display: none;">
+                        <span>Discount:</span>
+                        <span id="checkout-discount">-$0.00</span>
+                    </div>
+                    <hr>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="checkout-total">$0.00</span>
+                    </div>
+
+                    <div class="security-badges">
+                        <p style="font-size: 0.85rem; color: #6b7280;">
+                            🔒 Secure payment processing by Stripe
+                        </p>
+                        <p style="font-size: 0.85rem; color: #6b7280;">
+                            📦 Discreet packaging guaranteed
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>About Vibe-well</h3>
+                    <p>Premium wellness products delivered with discretion and care.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="policy.html">Privacy Policy</a></li>
+                        <li><a href="policy.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li>📧 support@vibewell.com</li>
+                        <li>📞 +1 (XXX) XXX-XXXX</li>
+                        <li>⏰ Available 24/7</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vibe-well. All rights reserved. | <a href="policy.html">Privacy</a> | <a href="policy.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>

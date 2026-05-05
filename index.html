@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe-well - Premium Wellness Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">Vibe-well</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="policy.html">Policies</a></li>
+                <li><a href="cart.html" class="cart-link">Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Vibe-well</h1>
+            <p>Discover Premium Wellness Products with Discreet Shipping & Exceptional Quality</p>
+            <a href="products.html" class="btn btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-section">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product1.jpg" alt="Premium Massager" onerror="this.src='images/placeholder.jpg'">
+                    </div>
+                    <h3>Premium Vibration Massager</h3>
+                    <p class="price">$49.99</p>
+                    <div class="rating">★★★★★ (248 reviews)</div>
+                    <button class="btn btn-secondary" onclick="addToCart(1)">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product2.jpg" alt="Luxury Massager" onerror="this.src='images/placeholder.jpg'">
+                    </div>
+                    <h3>Luxury Massager</h3>
+                    <p class="price">$79.99</p>
+                    <div class="rating">★★★★★ (312 reviews)</div>
+                    <button class="btn btn-secondary" onclick="addToCart(2)">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product3.jpg" alt="Travel Massager" onerror="this.src='images/placeholder.jpg'">
+                    </div>
+                    <h3>Travel Massager</h3>
+                    <p class="price">$39.99</p>
+                    <div class="rating">★★★★☆ (156 reviews)</div>
+                    <button class="btn btn-secondary" onclick="addToCart(3)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="products.html" class="btn btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Vibe-well?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>100% Discreet</h3>
+                    <p>Unmarked packaging with generic billing descriptors</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Secure Payment</h3>
+                    <p>Stripe encrypted payment processing</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Fast Shipping</h3>
+                    <p>Express shipping available - discreetly packaged</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>30-Day Guarantee</h3>
+                    <p>Money-back guarantee on all products</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Premium Quality</h3>
+                    <p>Highest quality materials and craftsmanship</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated customer support team always available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Customer Reviews</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="rating">★★★★★</div>
+                    <p>"Fantastic quality and incredible discretion. Very satisfied!"</p>
+                    <p class="author">- Sarah M.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">★★★★★</div>
+                    <p>"Fast shipping and great customer service. Highly recommend!"</p>
+                    <p class="author">- Jessica T.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">★★★★★</div>
+                    <p>"Best purchase I've made. Excellent quality and so discreet!"</p>
+                    <p class="author">- Amanda L.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Experience Premium Wellness?</h2>
+            <p>Join thousands of satisfied customers</p>
+            <a href="products.html" class="btn btn-primary">Browse Our Collection</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>About Vibe-well</h3>
+                    <p>Premium wellness products delivered with discretion and care.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="policy.html">Privacy Policy</a></li>
+                        <li><a href="policy.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li>📧 support@vibewell.com</li>
+                        <li>📞 +1 (XXX) XXX-XXXX</li>
+                        <li>⏰ Available 24/7</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vibe-well. All rights reserved. | <a href="policy.html">Privacy</a> | <a href="policy.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
