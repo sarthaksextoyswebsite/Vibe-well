@@ -80,7 +80,7 @@ vibe-well/
    - Get your publishable key
    - Update `checkout.js` with your Stripe key:
    ```javascript
-   const stripe = Stripe('pk_test_YOUR_KEY_HERE');
+   const stripe = Stripe('pk_test_51TX5z3JQCEVti9rVOZZLxwCOzmc0wC6JfXiypMsh8CdTKYRg2ZfvajoUu5YwAH0Zkk5KaEZ61zaQDEgAYMr1jOO700ymI6Tp83');
    ```
 
 4. **Add Product Images**
@@ -106,7 +106,7 @@ vibe-well/
 
 2. **Update checkout.js**
    ```javascript
-   const stripe = Stripe('pk_test_YOUR_ACTUAL_KEY');
+   const stripe = Stripe('pk_test_51TX5z3JQCEVti9rVOZZLxwCOzmc0wC6JfXiypMsh8CdTKYRg2ZfvajoUu5YwAH0Zkk5KaEZ61zaQDEgAYMr1jOO700ymI6Tp83');
    ```
 
 3. **Backend Integration** (for production)
